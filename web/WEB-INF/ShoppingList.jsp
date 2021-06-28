@@ -15,7 +15,7 @@
     <body>
         <h1>Shopping List</h1>
         <form>
-            <label>Hello, ${UserName} </label> 
+            <label>Hello, ${username} </label> 
             <form method="post" action="">
                 <a href="ShoppingList?action=logout"> Logout </a>
                 <h3> List </h3>
@@ -27,6 +27,20 @@
                 
             </form>
            
+            <!--this will show the items to the users-->
+            <form action="" method="post">
+                <c:forEach items="${myItem}" var="myList">
+                   
+                    <input type="radio" name="theItem" value="${myItem}"> ${myItem}
+                    
+                </c:forEach>
+                    <br>
+                    
+                    <input type="hidden" name="action" value="delete">
+                    <input type="submit" value="Delete">
+                    
+                
+            </form>
             
             
   
